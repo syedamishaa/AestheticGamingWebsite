@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ironclad Invasion - Game Details</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: linear-gradient(135deg,#0d0d0d,#001a1a,#000); color:white; margin:0; padding:0;}
+    .banner { position: relative; height: 300px; background: url('pic/ironclad-invasion-banner.jpg') no-repeat center/cover; display:flex; align-items:center; justify-content:center; text-align:center; }
+    .banner::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6);}
+    .banner h1 { position:relative; font-size:48px; color:#0ff; text-shadow:0 0 12px #0ff,0 0 25px #ff00ff; z-index:2;}
+    .container{ max-width:1000px; margin:auto; padding:40px 20px;}
+    .card{ background: rgba(20,20,20,0.95); border-radius:15px; padding:25px; margin-bottom:20px; box-shadow:0 0 15px #0ff,0 0 25px #ff00ff inset; transition:transform 0.3s;}
+    .card:hover{ transform:scale(1.03); box-shadow:0 0 25px #ff00ff,0 0 40px #0ff inset;}
+    h2{ color:#ff00ff; text-shadow:0 0 8px #ff00ff; margin-bottom:15px;}
+    p{ font-size:18px; line-height:1.6;}
+    .overview{ display:flex; flex-wrap:wrap; gap:20px; align-items:center;}
+    .overview img{ flex:1 1 40%; border-radius:12px; box-shadow:0 0 15px #0ff; max-height:250px; object-fit:cover;}
+    .overview-text{ flex:1 1 55%;}
+    .btn-back{ background:linear-gradient(90deg,#0ff,#ff00ff); color:black; font-weight:bold; padding:12px 25px; text-decoration:none; display:inline-block; margin-top:25px; border-radius:30px; transition:0.3s; box-shadow:0 0 12px #0ff;}
+    .btn-back:hover{ background:linear-gradient(90deg,#ff00ff,#0ff); box-shadow:0 0 20px #ff00ff; transform:scale(1.05);}
+  </style>
+</head>
+<body>
+
+  <div class="banner"><h1>Ironclad Invasion</h1></div>
+
+  <div class="container">
+    <div class="card overview">
+      <img src="pic/ironclad-invasion.jpg" alt="Ironclad Invasion Gameplay">
+      <div class="overview-text">
+        <h2>Overview</h2>
+        <p>Ironclad Invasion is a mech-based action strategy game. Command heavy-armored robots, conquer territories, and battle against AI or players in dynamic arenas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Key Features</h2>
+      <p>🤖 Mech combat<br>🏗️ Base building strategy<br>🌍 Dynamic battle arenas<br>👥 Multiplayer vs AI and players</p>
+    </div>
+
+    <div class="card"><h2>Platforms</h2><p>PC, PlayStation, Xbox</p></div>
+    <div class="card"><h2>Release Date</h2><p>April 2025</p></div>
+    <a class="btn-back" href="CARDS.html">⬅ Back to Search</a>
+  </div>
+
+</body>
+</html>

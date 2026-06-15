@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battlefield - Game Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #001a1a, #000);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* HEADER BANNER */
+    .banner {
+      position: relative;
+      height: 300px;
+      background: url('pic/battlefield-banner.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .banner h1 {
+      position: relative;
+      font-size: 48px;
+      color: #0ff;
+      text-shadow: 0 0 12px #0ff, 0 0 25px #ff00ff;
+      z-index: 2;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(26,26,26,0.9);
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    .container img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container h2 {
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff;
+      margin-bottom: 15px;
+    }
+
+    .container p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      background: linear-gradient(90deg, #0ff, #ff00ff);
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(90deg, #ff00ff, #0ff);
+      box-shadow: 0 0 12px #ff00ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <h1>Battlefield</h1>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="container">
+    <img src="pic/better.jpg" alt="Battlefield Game">
+    <h2>About Battlefield</h2>
+    <p>Battlefield is a series of first-person shooter video games that focus on large-scale multiplayer battles. Players experience intense combat across various maps and eras, utilizing a wide range of vehicles, weapons, and strategies.</p>
+    <p>Join the battlefield, fight with your squad, and dominate the warzones with skill and strategy. Whether you prefer solo missions or team-based objectives, Battlefield delivers an epic gaming experience.</p>
+
+    <a href="CARDS.html" class="back-btn">← Back to Search</a>
+  </div>
+
+</body>
+</html>

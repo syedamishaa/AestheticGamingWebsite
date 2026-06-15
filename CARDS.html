@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Games - Gaming World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a, #000);
+      color: #fff;
+    }
+
+    header {
+      background: #111;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    header h1 {
+       margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .search-container {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .search-container input {
+      width: 60%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 2px solid #0ff;
+      outline: none;
+      box-shadow: 0 0 15px #0ff;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .search-container input:focus {
+      box-shadow: 0 0 25px #ff00ff;
+      border-color: #ff00ff;
+    }
+
+    .suggestions {
+      max-width: 60%;
+      margin: auto;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 12px #ff00ff;
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+    }
+
+    .suggestions div {
+      padding: 8px;
+      border-bottom: 1px solid #333;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .suggestions div:hover {
+      background: #0ff;
+      color: black;
+    }
+
+    #gamesheading {
+      text-align: center;
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 25px #ff00ff;
+      margin-top: 30px;
+    }
+
+    #games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .game-card {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 15px;
+      border-radius: 12px;
+      height: 320px;
+      box-shadow: 0 0 12px #0ff, 0 0 25px #ff00ff inset;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff inset;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .game-card h1 {
+      font-size: 16px;
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .gamebtn {
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(90deg, #0ff, #ff00ff);
+      font-weight: bold;
+      height: 35px;
+      border-radius: 25px;
+      line-height: 35px;
+      transition: 0.3s;
+    }
+
+    .gamebtn:hover {
+      background: linear-gradient(90deg, #ff00ff, #0ff);
+      box-shadow: 0 0 12px #ff00ff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 -2px 12px #0ff;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎮 Gaming World</h1>
+    <nav>
+      <a href="PROJECT.html">Home</a>
+      <a href="CARDS.html">Games</a>
+      <a href="new.html">News</a>
+      <a href="about.html">About</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="🔍 Search your favorite game...">
+    <div class="suggestions" id="suggestions"></div>
+  </div>
+
+  <h2 id="gamesheading">🔥 Explore Games</h2>
+  <section id="games"></section>
+
+  <footer>
+    &copy; 2025 Gaming World | All Rights Reserved
+  </footer>
+
+  <script>
+    const gamesData = [
+      { title: "Rocket league", img: "pic/Rocket_League_cover.png", link: "rocket league.html" },
+      { title: "Valorant", img: "pic/valorant outer.jpg", link: "Valorant.html" },
+      { title: "Over watch 2", img: "pic/Overwatch_2_Steam_artwork.jpg", link: "over watch 2.html" },
+      { title: "Need for speed", img: "pic/NeedforSpeedHeat.webp", link: "Need for speed.html" },
+      { title: "Fall Guys", img: "pic/GameTile_糖豆人：終極淘汰賽.jpg", link: "fall guys.html" },
+      { title: "COD Mobile", img: "pic/call of duty.jpg", link: "call of duty.html" },
+      { title: "Free Fire", img: "pic/free fire.jpg", link: "game4.html" },
+      { title: "Candy Crush", img: "pic/candy crush out.372723d8-dd1a-450a-9fed-d420e7705e4e", link: "candy crush.html" },
+      { title: "Minecraft", img: "pic/minecraft.jpg", link: "minecraft.html" },
+      { title: "Fortnite", img: "pic/forttunie.jpg", link: "fortinite.html" }
+    ];
+
+    const gamesContainer = document.getElementById("games");
+
+    function renderGames() {
+      gamesContainer.innerHTML = "";
+      gamesData.forEach(g => {
+        const card = document.createElement("div");
+        card.className = "game-card";
+        card.innerHTML = `
+          <img src="${g.img}" alt="${g.title}">
+          <h1>${g.title}</h1>
+          <a href="${g.link}" class="gamebtn">Read more</a>
+        `;
+        gamesContainer.appendChild(card);
+      });
+    }
+
+    renderGames();
+
+    // SEARCH SYSTEM
+    const games = [
+      "Assassin's Creed", "Apex Legends", "Among Us", "ARK Gameplay", "Battlefield", "Bioshock", "Borderlands 3 Game",
+      "Celestial Quest", "Control", "Counter Strike Gameplay", "Cyberpunk 2077", "Celeste", "Dota 2", "Dead by Daylight",
+      "Destiny 2", "Firestorm Fury Gameplay", "Galaxy Guardians Gameplay", "GTA V", "Gears of War", "Hitman",
+      "Hyperdrive Horizon Gameplay", "Mystic Manor Gameplay", "Fortnite", "PUBG Mobile", "Phantom Pulse Gameplay",
+      "Subway Surfers", "Solar Strike Gameplay", "Temple Run", "Titan Tactics Gameplay", "Crash Bandicoot 4 Game",
+      "Angry Birds Gameplay", "BioShock Infinite Game", "Dead Space Game", "Dragon Age Game", "Escape Racer Gameplay",
+      "Ironclad Invasion Gameplay", "Neon Nights Gameplay", "Omega Odyssey Gameplay", "Quantum Quest Gameplay",
+      "Robo Runners Gameplay", "Ultra Universe Gameplay", "Vortex Velocity Gameplay", "Warp Warriors Gameplay",
+      "Xenon Xtreme Gameplay", "Yonder Yakuza Gameplay", "Zenith Zone Gameplay"
+    ];
+
+    const gameLinks = {
+      "BioShock Infinite Game": "cardb2.htm",
+      "Borderlands 3 Game": "cardb3.html",
+      "Fortnite": "fortinite.html",
+      "Firestorm Fury Gameplay": "cardF.html",
+      "Assassin's Creed": "card1.html",
+      "ARK Gameplay": "card4.html",
+      "Mystic Manor Gameplay": "cardM.html",
+      "Cyberpunk 2077": "cyberpunk.html",
+      "Apex Legends": "card3.html",
+      "Among Us": "card2.html",
+      "Battlefield": "cardb.html",
+      "Bioshock": "cardb5.html",
+      "Angry Birds Gameplay": "card5.html",
+      "Celestial Quest": "cardc.html",
+      "Control": "cardc3.html",
+      "Counter Strike Gameplay": "cardc2.html",
+      "Crash Bandicoot 4 Game": "cardc4.html",
+      "Celeste": "cardc5.html",
+      "Dota 2": "cardD.html",
+      "Dead by Daylight": "cardD2.html",
+      "Destiny 2": "cardD3.html",
+      "Dragon Age Game": "cardD5.html",
+      "Dead Space Game": "cardD4.html",
+      "Escape Racer Gameplay": "cardE.html",
+      "Galaxy Guardians Gameplay": "cardG.html",
+      "Hyperdrive Horizon Gameplay": "cardH.html",
+      "Ironclad Invasion Gameplay": "cardI.html",
+      "Neon Nights Gameplay": "cardN.html",
+      "Omega Odyssey Gameplay": "cardO.html",
+      "Phantom Pulse Gameplay": "cardP.html",
+      "Quantum Quest Gameplay": "cardQ.html",
+      "Robo Runners Gameplay": "cardR.html",
+      "Solar Strike Gameplay": "carddS.html",
+      "Titan Tactics Gameplay": "cardT.html",
+      "Ultra Universe Gameplay": "CARDU.html",
+      "Vortex Velocity Gameplay": "cardV.html",
+      "Warp Warriors Gameplay": "cardW.html",
+      "Xenon Xtreme Gameplay": "cardX.html",
+      "Yonder Yakuza Gameplay": "cardY.html",
+      "Zenith Zone Gameplay": "cardZ.html"
+    };
+
+    const searchInput = document.getElementById("search");
+    const suggestionsBox = document.getElementById("suggestions");
+
+    searchInput.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      suggestionsBox.innerHTML = "";
+
+      if (value) {
+        const filtered = games.filter(g => g.toLowerCase().includes(value));
+        filtered.forEach(g => {
+          const div = document.createElement("div");
+          div.textContent = g;
+          div.onclick = () => {
+            suggestionsBox.style.display = "none";
+            if (gameLinks[g]) {
+              window.location.href = gameLinks[g];
+            } else {
+              searchInput.value = g;
+            }
+          };
+          suggestionsBox.appendChild(div);
+        });
+        suggestionsBox.style.display = filtered.length ? "block" : "none";
+      } else {
+        suggestionsBox.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

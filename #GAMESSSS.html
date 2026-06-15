@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Games - Gaming World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a, #000);
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px #0ff;
+      animation: glowHeader 2s infinite alternate;
+    }
+
+    @keyframes glowHeader {
+      from {
+        box-shadow: 0 0 15px #0ff;
+      }
+      to {
+        box-shadow: 0 0 25px #ff00ff;
+      }
+    }
+
+    header h1 {
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 8px #0ff;
+    }
+
+    /* SECTION TITLE */
+    #gamesheading {
+      text-align: center;
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 25px #ff00ff;
+      margin-top: 30px;
+    }
+
+    /* GAMES GRID */
+    #games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* GAME CARDS */
+    .game-card {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 15px;
+      border-radius: 12px;
+      height: 320px;
+      box-shadow: 0 0 12px #0ff, 0 0 25px #ff00ff inset;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff inset;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .game-card h1 {
+      font-size: 16px;
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+
+    .gamebtn {
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(90deg, #0ff, #ff00ff);
+      font-weight: bold;
+      height: 35px;
+      border-radius: 25px;
+      line-height: 35px;
+      transition: 0.3s;
+    }
+
+    .gamebtn:hover {
+      background: linear-gradient(90deg, #ff00ff, #0ff);
+      box-shadow: 0 0 12px #ff00ff;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 -2px 12px #0ff;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🎮 Gaming World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- GAMES SECTION -->
+  <h2 id="gamesheading">🔥 Explore 50 Games</h2>
+  <section id="games">
+
+    <!-- Example Games (8 cards for demo, copy-paste to make 50) -->
+    <div class="game-card">
+      <img src="pic/game1.jpg" alt="Hitman">
+      <h1>Hitman</h1>
+      <a href="game1.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game2.jpg" alt="GTA V">
+      <h1>Grand Theft Auto V</h1>
+      <a href="game2.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game3.jpg" alt="PUBG">
+      <h1>PUBG Mobile</h1>
+      <a href="game3.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game4.jpg" alt="Subway Surfers">
+      <h1>Subway Surfers</h1>
+      <a href="game4.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game5.jpg" alt="Temple Run">
+      <h1>Temple Run</h1>
+      <a href="game5.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game6.jpg" alt="COD Mobile">
+      <h1>Call of Duty Mobile</h1>
+      <a href="game6.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game7.jpg" alt="Free Fire">
+      <h1>Free Fire</h1>
+      <a href="game7.html" class="gamebtn">Play Now</a>
+    </div>
+
+    <div class="game-card">
+      <img src="pic/game8.jpg" alt="Assassin's Creed">
+      <h1>Assassin's Creed</h1>
+      <a href="game8.html" class="gamebtn">Play Now</a>
+    </div>
+
+    
+    
+  </section>
+
+  
+  <footer>
+    &copy; 2025 Gaming World | All Rights Reserved
+  </footer>
+
+</body>
+</html>
+
+

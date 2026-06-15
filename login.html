@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+      color: #fff;
+    }
+
+    .message {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 255, 255, 0.2);
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #0ff;
+      display: none;
+      font-weight: bold;
+    }
+
+    .login-box {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #0ff, 0 0 50px #0ff inset;
+      width: 320px;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset; }
+      to   { box-shadow: 0 0 25px #ff00ff, 0 0 50px #ff00ff inset; }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #0ff;
+      text-shadow: 0 0 8px #0ff;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      background: #111;
+      color: #0ff;
+      box-shadow: 0 0 8px #0ff inset;
+    }
+
+    .login-box input::placeholder {
+      color: #888;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #0ff, #ff00ff);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: linear-gradient(90deg, #ff00ff, #0ff);
+      transform: scale(1.05);
+    }
+
+    .extra-links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .extra-links a {
+      color: #0ff;
+      text-decoration: none;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+      color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="message" id="topMessage">✅ Login Successful! Redirecting...</div>
+
+ <div class="login-box">
+  <h2>🎮 Gaming Login</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+
+
+
+
+<script>
+  const emailInput = document.getElementById("email");
+  const form = document.getElementById("loginForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+
+    const email = emailInput.value;
+    const localPart = email.split("@")[0];
+
+  
+    if (/^\d+$/.test(localPart)) {
+      emailInput.setCustomValidity("please entry @,abc,.");
+      emailInput.reportValidity(alert); 
+      return;
+    } else {
+      emailInput.setCustomValidity("");
+    }
+
+
+    alert("Login Successful!");
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1500);
+  });
+</script>
+
+
+</body>
+</html>
+

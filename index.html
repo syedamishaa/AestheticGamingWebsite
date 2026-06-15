@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming World</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: rgb(135, 250, 250);
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      position: relative;
+      min-height: 100vh;
+    }
+    
+
+    /* Background Video Full Page */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(17, 17, 17, 0.7);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #gamesheading {
+      text-align: center;
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff;
+    }
+
+    #games {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* GAME CARDS */
+    .game-card {
+      background: rgba(26, 26, 26, 0.85);
+      padding: 15px;
+      border-radius: 12px;
+      height: 350px;
+      box-shadow: 0 0 15px #0ff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff00ff;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .game-card h1 {
+      font-size: 18px;
+      margin: 0;
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff;
+    }
+
+    .gamebtn {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid #0ff;
+      height: 35px;
+      border-radius: 25px;
+      line-height: 35px;
+      transition: 0.3s;
+    }
+
+    .gamebtn:hover {
+      background-color: #0ff;
+      color: black;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    /* NEWS SECTION */
+    #news {
+      padding: 40px 20px;
+    }
+
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .news-card {
+      background: rgba(26, 26, 26, 0.9);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #0ff;
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 18px #ff00ff;
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .news-card h3 {
+      margin: 8px 0;
+      color: #ff00ff;
+      text-shadow: 0 0 5px #ff00ff;
+    }
+
+    .news-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .newsbtn {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 2px solid #0ff;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .newsbtn:hover {
+      background: #0ff;
+      color: black;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    footer {
+      background: rgba(17, 17, 17, 0.9);
+      padding: 40px 20px 20px;
+      color: #ccc;
+      font-size: 14px;
+      box-shadow: 0 -2px 15px #0ff;
+    }
+
+    footer,
+    footer * {
+      text-shadow: none !important;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 10px;
+    }
+
+    .footer-section p {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 6px 0;
+    }
+
+    .footer-section ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #ff00ff;
+    }
+
+    .social-links a {
+      color: #0ff;
+      margin: 0 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff00ff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="video/13255251_1440_2560_30fps.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🎮 Gaming World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="CARDS.html">Games</a>
+      <a href="new.html">News</a>
+      <a href="about.html">About</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home">
+    <h2>Welcome to Gaming World</h2>
+    <p>Play exciting games, read gaming news, and compete with friends!</p>
+  </section>
+
+  <!-- GAMES -->
+  <h2 id="gamesheading">🎯 Popular Games</h2>
+  <section id="games"></section>
+
+  <!-- LATEST GAMING NEWS -->
+  <section id="news">
+    <h2 style="color:#0ff; text-shadow:0 0 8px #0ff; text-align:center; margin-bottom:20px;">
+      📰 Latest Gaming News
+    </h2>
+    <div class="news-container" id="news-container"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>🎮 About Gaming World</h3>
+        <p>
+          Gaming World is your one-stop destination for the latest games,
+          news, and updates. Join millions of gamers exploring exciting
+          adventures, action-packed missions, and competitive fun online!
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>⚡ Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="CARDS.html">Games</a></li>
+          <li><a href="new.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>📩 Contact Us</h3>
+        <p>Email: support@gamingworld.com</p>
+        <p>Phone: +92 300 1234567</p>
+        <p>Location: Karachi, Pakistan</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>🌐 Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+          <a href="https://www.Twitter.com/" target="_blank">Twitter</a> |
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Gaming World | All Rights Reserved 🚀
+    </div>
+  </footer>
+
+  <!-- ✅ JavaScript for Dynamic Cards -->
+  <script>
+    const games = [
+      { title: "Hitman", img: "pic/Hitman_3_artwork.jpg", link: "pRojet.html" },
+      { title: "Grand Theft Auto V", img: "pic/Grand_Theft_Auto_V.png", link: "projec.html" },
+      { title: "PUBG Mobile", img: "pic/pubg moible.jpg", link: "game3.html" },
+      { title: "Subway Surfers", img: "pic/Subway_Surfers.jpg", link: "game7.html" },
+      { title: "Racing Fever Moto", img: "pic/racing.png", link: "game5.html" },
+      { title: "Temple Run", img: "pic/TempleRun.jpg", link: "game6.html" }
+    ];
+
+    const news = [
+      { title: "GTA 6 Official Trailer Released", img: "pic/GTA-6-Game.webp", desc: "Rockstar Games finally revealed the GTA 6 trailer, featuring a massive new map and two main protagonists." },
+      { title: "Esports Tournament 2025 Announced", img: "pic/e-sport.webp", desc: "A $10 Million prize pool has been announced for the 2025 Esports World Championship. 🔥" },
+      { title: "PUBG 2 Coming Soon", img: "pic/PUBG-2.webp", desc: "Developers confirm PUBG 2 is under development with next-gen graphics and cross-platform support." },
+      { title: "Fortnite New Season Update", img: "pic/fortinite.jpg", desc: "Epic Games rolls out a futuristic season featuring new skins, weapons, and battle maps." }
+    ];
+
+    const gamesContainer = document.getElementById("games");
+    games.forEach(game => {
+      gamesContainer.innerHTML += `
+        <div class="game-card">
+          <img src="${game.img}" alt="${game.title}">
+          <h1>${game.title}</h1>
+          <a href="${game.link}" class="gamebtn">Read more</a>
+        </div>`;
+    });
+
+    const newsContainer = document.getElementById("news-container");
+    news.forEach(article => {
+      newsContainer.innerHTML += `
+        <div class="news-card">
+          <img src="${article.img}" alt="${article.title}">
+          <h3>${article.title}</h3>
+          <p>${article.desc}</p>
+        </div>`;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioShock - Game Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a, #000);
+      color: white;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #0ff;
+      text-shadow: 0 0 12px #0ff, 0 0 25px #ff00ff;
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 12px #0ff, 0 0 25px #ff00ff inset;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff inset;
+    }
+
+    h2 {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+      border-left: 5px solid #0ff;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .overview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .overview img {
+      flex: 1 1 40%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff;
+      max-height: 500px;
+      object-fit: cover;
+    }
+
+    .overview-text {
+      flex: 1 1 55%;
+    }
+
+    .btn-back {
+      background: linear-gradient(90deg, #0ff, #ff00ff);
+      color: black;
+      font-weight: bold;
+      padding: 12px 25px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 25px;
+      border-radius: 30px;
+      transition: 0.3s;
+      box-shadow: 0 0 12px #0ff;
+    }
+
+    .btn-back:hover {
+      background: linear-gradient(90deg, #ff00ff, #0ff);
+      box-shadow: 0 0 25px #ff00ff;
+      transform: scale(1.08);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #1a1a1a;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #0ff;
+      transition: 0.3s;
+    }
+
+    ul li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px #ff00ff;
+    }
+  </style>
+</head>
+<body>
+
+<header>BioShock</header>
+
+<div class="container">
+  <div class="card overview">
+    <img src="pic/bioshc.jpg" alt="BioShock Gameplay">
+    <div class="overview-text">
+      <h2>Overview</h2>
+      <p>BioShock is a first-person shooter set in the underwater city of Rapture. Players navigate through a dystopian world filled with genetically modified citizens, powerful weapons, and plasmid abilities.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Key Features</h2>
+    <ul>
+      <li>🔫 First-Person Shooter</li>
+      <li>🌊 Explore Underwater City Rapture</li>
+      <li>🧬 Use Plasmids for Superhuman Abilities</li>
+      <li>🎯 Strategic Combat and Resource Management</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Platforms</h2>
+    <p>PC, PS3, PS4, Xbox 360, Xbox One</p>
+  </div>
+
+  <div class="card">
+    <h2>Release Date</h2>
+    <p>August 21, 2007</p>
+  </div>
+
+  <a class="btn-back" href="CARDS.html">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
